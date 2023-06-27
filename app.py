@@ -7,12 +7,13 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,StickerSendMessage
+    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('mhxy80KfcTKKVzJRuSlKJrfRaPz2QAujoIxXcqLOHlLDGVOnBfd0nhZrlFoGuvdiE4zv0t6sPb3bvPM4V1R9cGOa34GNeK5yYfknPc7KBc7oWejaACPtrdvUCooAHnwqaHaHA1V7ZO2JGOFZH7wwBgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(
+    'mhxy80KfcTKKVzJRuSlKJrfRaPz2QAujoIxXcqLOHlLDGVOnBfd0nhZrlFoGuvdiE4zv0t6sPb3bvPM4V1R9cGOa34GNeK5yYfknPc7KBc7oWejaACPtrdvUCooAHnwqaHaHA1V7ZO2JGOFZH7wwBgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('3c47f560a37827f9a1a9063e35a3511a')
 
 
@@ -47,8 +48,8 @@ def handle_message(event):
         )
 
         line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
+            event.reply_token,
+            sticker_message)
         return
 
     if msg in ['hi', 'Hi']:
